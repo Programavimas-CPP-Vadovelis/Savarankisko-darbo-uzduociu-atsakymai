@@ -8,7 +8,7 @@ private:
 	int sign;        //trupmenos ženklas
 	int intPart;     //sveikoji trupmenos dalis
 	int numerator,   //trupmenos skaitiklis
-		denominator; //ir vardiklis
+	    denominator; //ir vardiklis
 public:
 	//
 	//vidinė klaidos klasė
@@ -32,8 +32,7 @@ public:
 			if (errorIntPart != 0)
 				cout << errorIntPart;
 			if (errorNumerator != 0)
-				cout << ' ' << errorNumerator << "/" 
-<< errorDenominator;
+				cout << ' ' << errorNumerator << "/" << errorDenominator;
 			if (errorIntPart == 0 && errorNumerator == 0)
 				cout << '0';
 			cout << endl << endl;
@@ -42,18 +41,15 @@ public:
 	//
 	//išorinės klasės konstruktoriai ir destruktorius
 	//
-	CommonFraction() : sign(1), intPart(0), numerator(0), denominator(1)
-	{}
+	CommonFraction() : sign(1), intPart(0), numerator(0), denominator(1){}
 	CommonFraction(int s, int ip, int n, int d) :
 		sign(s), intPart(ip), numerator(n), denominator(d) {
 		if (abs(sign) != 1) {  //klaida - sukurti klaidos objektą
-		      char kz[] = 
-  "Konstruktorius. Blogai ivestas trupmenos zenklas. Stop\n";
+		      char kz[] = "Konstruktorius. Blogai ivestas trupmenos zenklas. Stop\n";
 			throw Error(kz, s, ip, n, d);
 		}
 		if (d == 0) { //klaida - sukurti klaidos objektą
-			char kv[] = 
-"Konstruktorius. Blogai ivestas trupmenos vardiklis. Stop\n";
+			char kv[] = "Konstruktorius. Blogai ivestas trupmenos vardiklis. Stop\n";
 			throw Error(kv, s, ip, n, d);
 		}
 	}
@@ -71,7 +67,7 @@ int main()
 {
 	try {
 		CommonFraction f1, f2, //pradinės trupmenos
-			r;         //rezultato trupmena
+			       r;      //rezultato trupmena
 	 //
 		f1.getFraction();
 		f1.printFraction("Pirmoji trupmena: ");
@@ -135,10 +131,8 @@ void CommonFraction::getFraction() {
 CommonFraction CommonFraction::operator+(CommonFraction f) {
 
 	// r = <darbinis objektas> + f
-	// „f“ perduodame reikšme, kad metode objektui padaryti pokyčiai
-	// nepaveiktų atitinkamo programos objekto laukų. 
-  // Klasės laukai nėra dinaminiai,
-	// todėl kopijuojantįjį konstruktorių perrašyti nebūtina 
+	// „f“ perduodame reikšme, kad metode objektui padaryti pokyčiai nepaveiktų atitinkamo programos objekto laukų. 
+        // Klasės laukai nėra dinaminiai todėl kopijuojantįjį konstruktorių perrašyti nebūtina 
 
 f.numerator = f.sign * (f.numerator + f.intPart * f.denominator); //objekto-argumento
 int dnumerator = sign * (numerator + intPart * denominator);      //darbinio objekto
@@ -228,8 +222,7 @@ CommonFraction CommonFraction::operator/(CommonFraction f) {
 	// r = <darbinis objektas> / f
 
 	if (f.intPart == 0 && f.numerator == 0) { // klaida - dalyba iš nulio
-		char dnt[] = 
-    "Ivedimas. Blogai ivestas trupmenos vardiklis. Stop\n";
+		char dnt[] = "Ivedimas. Blogai ivestas trupmenos vardiklis. Stop\n";
 		throw Error(dnt, f.sign, f.intPart, f.numerator, 
 						f.denominator);
 	}
@@ -240,8 +233,7 @@ CommonFraction CommonFraction::operator/(CommonFraction f) {
 	int rdenominator = denominator * f.numerator;
 	//
 	int rsign = +1;
-	if (rnumerator < 0 && rdenominator>0 || 
-rnumerator > 0 && rdenominator < 0)
+	if (rnumerator < 0 && rdenominator>0 || rnumerator > 0 && rdenominator < 0)
 		rsign = -1;
 	rdenominator = abs(rdenominator);
 	rnumerator = abs(rnumerator);
