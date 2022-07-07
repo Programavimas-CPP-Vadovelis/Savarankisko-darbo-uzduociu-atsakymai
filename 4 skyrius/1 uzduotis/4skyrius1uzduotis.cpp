@@ -6,9 +6,7 @@ using std::endl;
 int main() {
 	int miestai[10];
 	int msk; // miestų skaičius
-	int bsk, anr, ask; // bendras gyventojų skaičius, 
-		       // antrojo pagal dydį miesto numeris
-		       // ir jo gyventojų skaičius
+	int bsk, anr, ask; // bendras gyventojų skaičius, antrojo pagal dydį miesto numeris ir jo gyventojų skaičius
 	//
 	cout << "Iveskite miestu skaiciu\n";
 	cin >> msk;
