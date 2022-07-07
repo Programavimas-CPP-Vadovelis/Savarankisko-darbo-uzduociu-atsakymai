@@ -6,10 +6,9 @@ using std::endl;
 //
 int main() {
 	double tol;    // skaičiavimo tolerancija
-	double ys, yn; // integralai: prie grubesnio ir
-		   // smulkesnio integravimo žingsnių
+	double ys, yn; // integralai: prie grubesnio ir smulkesnio integravimo žingsnių
 	double a, b;   // a,b - integravimo rėžiai
-	double xk, xd, fk, fd, s; // abscisės, funkcijos reikšmės					   // ir mažos trapecijos plotas
+	double xk, xd, fk, fd, s; // abscisės, funkcijos reikšmės ir mažos trapecijos plotas
 	//
 	cout << "Iveskite skaiciavimo tiksluma\n";
 	cin >> tol;
@@ -24,15 +23,13 @@ int main() {
 		return -1;
 	}
 	//
-	double t = 5. * (b - a) / 1000.; // pradinis integravimo žingsnis
-		     	          // - cikle bus padaugintas iš 5 
+	double t = 5. * (b - a) / 1000.; // pradinis integravimo žingsnis - cikle bus padaugintas iš 5 
 	//
 	ys = 0.;    // =0 - kad prasisuktų bent viena iteracija
 	for (; ; ) { // begalinis ciklas tikslumui pasiekti
 		t /= 5.;
 		yn = 0.;
-		for (xk = a; xk <= b - t; xk += t) { // ciklas integralui
-  // skaičiuoti
+		for (xk = a; xk <= b - t; xk += t) { // ciklas integralui skaičiuoti
 		//for( xk=a; abs(xk-b)>1.e-10; xk+=t ){ // alternatyvus ciklas
 			xd = xk + t;
 			fk = xk * xk;
