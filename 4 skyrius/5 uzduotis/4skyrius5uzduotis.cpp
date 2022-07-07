@@ -45,8 +45,7 @@ int main() {
 			       break; // pereiti prie kitos j reikšmės
 			    }
 		    }
-		    if (v) break; // - nebebuvo pilnos sekos 1,2,3,4 -
-			      // baigti rūšiavimą
+		    if (v) break; // - nebebuvo pilnos sekos 1,2,3,4 - baigti rūšiavimą
 		}
 	}
 	//
